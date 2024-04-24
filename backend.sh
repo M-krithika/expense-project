@@ -12,6 +12,8 @@ B="\e[34m"
 P="\e[35m"
 N="\e[0m"
 
+echo "script started executing at: $TIMESTAMP"
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
@@ -24,13 +26,14 @@ VALIDATE(){
     fi
 }
 
-if [ $USERID -ne 0 ]
+if [ $USERID -ne 0]
 then
     echo "please run this script with root access."
     exit 1
 else
     echo "you are super user"
 fi
+
 
 dnf module disable nodejs -y &>>$LOGFILE
 VALIDATE $? "disabiling nodejs"
