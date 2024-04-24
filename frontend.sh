@@ -12,7 +12,7 @@ B="\e[34m"
 N="\e[35m"
 
 VALIDATE(){
-    if [$1 -ne 0 ]
+    if [ $1 -ne 0 ]
     then
         echo -e "$2...$R FAILURE $n"
         exit 1
@@ -21,7 +21,7 @@ VALIDATE(){
     fi
 }
 
-if [$USERID -ne 0 ]
+if [ $USERID -ne 0 ]
 then
     echo "please run the script with root access"
 else
