@@ -9,7 +9,6 @@ R="\e[31m"
 G="\e[33m"
 Y="\e[33m"
 B="\e[34m"
-P="\e[35m"
 N="\e[0m"
 echo "please enter DB password:"
 read -s mysql_root_password
@@ -46,7 +45,7 @@ VALIDATE $? "starting mysql server"
 #mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
 #VALIDATE $? "setting the root password"
 
-mysql -h 172.31.18.55 -uroot -p$(mysql_root_password) -e 'show databases;' &>>$LOGFILE
+mysql -h 172.31.90.1 -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 
 if [$? -ne 0]
 then    
